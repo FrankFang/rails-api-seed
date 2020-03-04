@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: 192.168.99.102 # 只有 Windows 旧版 Docker 需要这一句
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: morney
+
+development:
+  <<: *default
+  database: morney_development
+  #password:
+  #host: localhost
+  #port: 5432
+  #schema_search_path: myapp,sharedapp,public
+  #min_messages: notice
+test:
+  <<: *default
+  database: morney_test
+
+production:
+  <<: *default
+  database: morney_production
+  username: morney
+  #password: <%= ENV['MORNEY_BACKEND_DATABASE_PASSWORD'] %>
