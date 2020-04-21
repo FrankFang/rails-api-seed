@@ -10,7 +10,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     if Rails.env.development?
       origins 'localhost:8080', 'localhost:5000', 'localhost:3000'
     else
-      origins 'xiedaimala.com', 'x.xiedaimala.com'
+      origins 'your_domain.com', 'x.your_domain.com'
     end
     resource '*',
              headers: :any,
