@@ -10,17 +10,17 @@ RSpec.describe PasswordResetsController, type: :controller do
     end
     it 'should 提示 code 不存在' do
       post :create, params: {code: 'hi', password: '123456', password_confirmation: '222222'}
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(422)
       expect(JSON.parse(response.body)['errors']['code']).to be
     end
     it 'should 提示密码太短' do
       post :create, params: {code: @password_reset_request.code, password: '12', password_confirmation: '12'}
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(422)
       expect(JSON.parse(response.body)['errors']['password']).to be
     end
     it 'should 提示密码不匹配' do
       post :create, params: {code: @password_reset_request.code, password: '123456', password_confirmation: '123457'}
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(422)
       expect(JSON.parse(response.body)['errors']['password_confirmation']).to be
     end
   end

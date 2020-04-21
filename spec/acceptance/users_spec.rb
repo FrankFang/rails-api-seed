@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Users 用户" do
-  let(:email) { 'xxxx@xxxxxx.com' }
+  let(:email) { 'no-reply@your_domain.com' }
   let(:password) { '12345678' }
   let(:password_confirmation) { '12345678' }
   let(:user) { User.first }

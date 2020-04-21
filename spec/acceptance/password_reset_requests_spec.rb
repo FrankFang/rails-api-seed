@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "PasswordResetRequests 密码重置请求" do
-  let(:email) { 'xxxx@xxxxxx.com' }
+  let(:email) { 'no-reply@your_domain.com' }
   parameter :email, '邮箱', required: true
   post "/password_reset_requests" do
     response_field :resource, 'PasswordResetRequest 对象'
