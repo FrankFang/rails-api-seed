@@ -3,9 +3,10 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
-#  email           :string(100)
+#  email           :string
 #  name            :string
 #  password_digest :string
+#  phone           :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

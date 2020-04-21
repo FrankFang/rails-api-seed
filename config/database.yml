@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   host: 192.168.99.102 # 只有 Windows 旧版 Docker 需要这一句
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: morney
+  username: westore
 
 development:
   <<: *default
@@ -20,5 +20,5 @@ test:
 production:
   <<: *default
   database: morney_production
-  username: morney
+  username: westore
   #password: <%= ENV['MORNEY_BACKEND_DATABASE_PASSWORD'] %>
